@@ -7,15 +7,11 @@
 
 int main(){
 
-	int id;
-	std::string prenom;
-	std::string nom;
-	id = 98;
+	
 
-	prenom = "ANTHONY";
-	nom = "BETCH";
+	//prenom = "ANTHONY";   nom = "BETCH";
 
-	Client cl(id,prenom,nom);
+	Client cl(93,"ANTOINE","BETCH");
 
 	Produit carrot("Carrotte","Legume",5,65);
 

@@ -17,17 +17,19 @@ public:
 
 	std::string getNom() const;
 
-	std::vector<Produit*> getPanier() const;
+	//tableau de pointeurs vers le panier
+	std::vector<Produit> getPanier() ;
 
 	void addProduit(Produit product);
-	std::vector<Produit*> Client::affichePanier() const;
+	
+	std::vector<Produit> affichePanier() ;
 
 private:
 
 	int m_idclient;
 	std::string m_prenom;
 	std::string m_nom;
-	std::vector<Produit*> m_panier;
+	std::vector<Produit> m_panier;
 
 	
 
