@@ -12,7 +12,7 @@ class Magasin{
 
 public:
 	
-
+void vector<Product*> addProduit();
 
 
 
