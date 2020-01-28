@@ -3,9 +3,9 @@
 #include "produit2.h"
 
 
-// QUESTION 2.a
+						// QUESTION 2.a
 
-
+//CONSTRUCTEUR
 Produit::Produit(std::string titre, std::string description, int qte, float prix ){
 
 	m_titre = titre;
@@ -68,6 +68,7 @@ void Produit::setQte(int qte){
 				// QUESTION 2.b
 
 
+//surcharge pour afficher un produit
 std::ostream& operator << (std::ostream &output,Produit product ) {
 
 		output << "Nom du produit : " << product.m_titre << std::endl << "  Description : "<< product.m_description <<std::endl << "  Quantite : " << product.m_qte <<std::endl <<"  Prix : " << product.m_prix << std::endl ;

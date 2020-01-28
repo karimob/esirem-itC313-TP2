@@ -9,7 +9,7 @@ int main (){
 
 	Produit P("UNDERWORLD","FILM", 6 , 68.45 ) ;
 
-	P.setQuantite( 9 );
+	P.setQte( 9 );
 
 	std::cout << P ;
 
