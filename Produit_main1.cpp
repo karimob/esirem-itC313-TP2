@@ -1,5 +1,6 @@
 #include "Produit1.h"
 
+//QUESTION 
 int main (){
 	Produit a("PS4","Console de jeu Sony", 10 , 299.99 ) ;
 	a.setQuantite( 9 );

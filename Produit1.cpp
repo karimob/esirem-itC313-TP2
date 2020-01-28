@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Produit1.h"
 
-//  Question 2a
+//  Question 2.a
 
 Produit::Produit(std::string titre, std::string description, int quantite,float prix ){
 	m_titre = titre;
