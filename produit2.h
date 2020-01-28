@@ -27,7 +27,7 @@ public :
 
 	float getPrix();
 
-	void setQte(int quantite);
+	void setQte(int qte);
 
 	
 
@@ -38,7 +38,7 @@ private :
 
 	std::string m_description ;
 
-	int m_quantite ;
+	int m_qte ;
 
 	float m_prix ;
 

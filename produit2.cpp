@@ -40,7 +40,7 @@ std::string Produit::getDescription(){
 
 
 
-int Produit::getQuantite(){
+int Produit::getQte(){
 
 	return m_qte ;
 
@@ -58,7 +58,7 @@ float Produit::getPrix(){
 
 void Produit::setQte(int qte){
 
-	if( qute >= 0 ) 
+	if( qte >= 0 ) 
 
 		m_qte = qte ;
 

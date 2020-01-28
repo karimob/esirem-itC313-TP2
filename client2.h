@@ -2,7 +2,7 @@
 #define _client_h
 #include <vector>
 #include <string>
-#include "produit.h"
+#include "produit2.h"
 
 
 class Client {
@@ -26,7 +26,7 @@ private:
 	int m_idclient;
 	std::string m_prenom;
 	std::string m_nom;
-	std::vector<Produit> m_panier;
+	std::vector<Produit*> m_panier;
 
 	
 

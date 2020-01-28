@@ -1,5 +1,5 @@
 #include <iostream>
-#include "produit.h"
+#include "produit2.h"
 #include "client2.h"
 #include <vector>
 #include <string>
@@ -32,12 +32,12 @@ int main(){
 
 	std::cout << "identifiant : " << cl.getIdclient() << std::endl;
 
-	int i;
-	i = cl.getPanier().size();
+	int n;
+	n = cl.getPanier().size();
 
 	std::cout << "      Voici votre panier de produits: " <<std::endl;
 
-	for (int c=0;c<i;c++){
+	for (int c=0;c<n;c++){
 	std::cout<<cl.getPanier().at(c)  << std::endl;
 	}
 

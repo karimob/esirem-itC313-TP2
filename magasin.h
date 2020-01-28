@@ -2,8 +2,13 @@
 #define _magasin_h
 #include <vector>
 #include <string>
+#include "client2.h"
+#include "produit2.h"
+#include "order.h"
 
-class Magasin{;
+
+
+class Magasin{
 
 public:
 	
@@ -19,7 +24,7 @@ std::vector<Client*> m_clients;
 
 std::vector<Order*> m_orders;
 
-}
+};
 
 
 #endif
