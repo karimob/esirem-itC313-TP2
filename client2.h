@@ -20,6 +20,7 @@ public:
 	std::vector<Produit*> getPanier() const;
 
 	void addProduit(Produit product);
+	std::vector<Produit*> Client::affichePanier() const;
 
 private:
 

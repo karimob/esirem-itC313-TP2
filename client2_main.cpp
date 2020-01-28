@@ -32,14 +32,7 @@ int main(){
 
 	std::cout << "identifiant : " << cl.getIdclient() << std::endl;
 
-	int n;
-	n = cl.getPanier().size();
-
-	std::cout << "      Voici votre panier de produits: " <<std::endl;
-
-	for (int c=0;c<n;c++){
-	std::cout<<cl.getPanier().at(c)  << std::endl;
-	}
+	
 
 	return 0;
 	}
