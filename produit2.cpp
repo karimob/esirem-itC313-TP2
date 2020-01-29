@@ -1,12 +1,12 @@
 #include <iostream>
 
 #include "produit2.h"
-
+using namespace std;
 
 						// QUESTION 2.a
 
 //CONSTRUCTEUR
-Produit::Produit(std::string titre, std::string description, int qte, float prix ){
+Produit::Produit(string titre,string description, int qte, float prix ){
 
 	m_titre = titre;
 
@@ -24,7 +24,7 @@ Produit::Produit(std::string titre, std::string description, int qte, float prix
 
 
 
-std::string Produit::getTitle(){
+string Produit::getTitle(){
 
 	return m_titre ;
 
@@ -32,7 +32,7 @@ std::string Produit::getTitle(){
 
 
 
-std::string Produit::getDescription(){
+string Produit::getDescription(){
 
 	return m_description ;
 
@@ -69,9 +69,9 @@ void Produit::setQte(int qte){
 
 
 //surcharge pour afficher un produit
-std::ostream& operator << (std::ostream &output,Produit product ) {
+ostream& operator << (ostream &output,Produit product ) {
 
-		output << "Nom du produit : " << product.m_titre << std::endl << "  Description : "<< product.m_description <<std::endl << "  Quantite : " << product.m_qte <<std::endl <<"  Prix : " << product.m_prix <<"$"<< std::endl ;
+		output << "Nom du produit : " << product.m_titre <<endl << "  Description : "<< product.m_description <<std::endl << "  Quantite : " << product.m_qte <<endl <<"  Prix : " << product.m_prix <<"$"<<endl ;
 
 		return output;
 

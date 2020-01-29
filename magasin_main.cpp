@@ -19,7 +19,7 @@ Produit P("UNDERWORLD","FILM", 6 , 68.45 ) ;
 n.addProduit(P);
 cout << P ;
 
-n.updateQte("UNDERWORLD");
+n.updateQte("UNDERWORLD",7);
 cout << P ;
 
 

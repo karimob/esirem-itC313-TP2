@@ -27,6 +27,7 @@ public:
 
 	void delProduct(std::string titre); // supprimer un produit du panier d’achat
 
+	//friend std::ostream& operator << (std::ostream &output, Client c);
 
 										//std::vector<Produit> affichePanier() ; 
 

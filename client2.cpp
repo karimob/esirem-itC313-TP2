@@ -56,8 +56,18 @@ void Client::videPanier() {
 
 
 // modifier la quantité d’un produit ajouté au panier d’achat
- void Client::modifQte(){
+ void Client::modifQte(string titre,int qte){
 
+
+ 		for (int i=0; i< m_panier.size(); i++) {
+
+ 			if(m_panier.at(i).getTitle() == titre){
+            
+            	//int qte =9;
+				m_panier.at(i).setQte(9) ;   
+
+         	}
+         }
 
  }
 
