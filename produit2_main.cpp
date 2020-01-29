@@ -11,7 +11,7 @@ int main (){
 
 	P.setQte( 9 );
 
-	std::cout << P ;
+	cout << P ;
 
 
 
