@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 
+using namespace std;
 
 int main(){
 
@@ -22,11 +23,11 @@ int main(){
 	cl.addProduit(carrot);
 
 
-	std::cout << "prenom : "<< cl.getPrenom() << std::endl;
+	/*cout << "prenom : "<< cl.getPrenom() <<endl;
 
-	std::cout << "nom : "<< cl.getNom() << std::endl;
+	cout << "nom : "<< cl.getNom() <<endl;
 
-	std::cout << "identifiant : " << cl.getIdclient() << std::endl;
+	cout << "identifiant : " << cl.getIdclient() <<endl;*/
 
 	
 

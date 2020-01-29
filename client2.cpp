@@ -3,17 +3,18 @@
 #include <vector>
 #include <string>
 
-		//QUESTIONS 4.a et 4.b
+using namespace std;
+		//QUESTIONS 4.a à 4.f
 
 
 //CONSTRUCTEUR
 
-Client::Client(int idclient, std::string prenom, std::string nom){
+Client::Client(int idclient, string prenom, string nom){
 
 	m_idclient = idclient;
 	m_prenom = prenom;
 	m_nom = nom;
-	std::vector<Produit> m_panier;
+	vector<Produit> m_panier;
 	//m_panier = panier;
 }
 
@@ -27,23 +28,78 @@ int Client::getIdclient() const{
 }
 
 //affiche le prenom du client
-std::string Client::getPrenom() const{
+string Client::getPrenom() const{
 	return m_prenom;
 }
 
 //affiche le nom du client
 
-std::string Client::getNom() const{
+string Client::getNom() const{
 	return m_nom;
 }
 
+
+//ajoute un produit au panier
+void Client::addProduit(Produit product){
+	m_panier.push_back (product);
+}
+
+
+
+//vider le panier d’achat
+void Client::videPanier() {
+	for (int i=0; i< m_panier.size(); i++) {
+
+	m_panier.clear();
+	}
+}
+
+
+// modifier la quantité d’un produit ajouté au panier d’achat
+ void Client::modifQte(){
+
+
+ }
+
+// supprimer un produit du panier d’achat
+
+void Client::delProduct(string titre){
+	
+	for (int i=0; i< m_panier.size(); i++) {
+
+ 		if(m_panier.at(i).getTitle() == titre){
+            
+            	m_panier.erase(m_panier.begin(),m_panier.end()) ; 
+
+         }
+    }
+ }
+
+
 //affiche le panier
-std::vector<Produit> Client::getPanier() {
+vector<Produit> Client::getPanier() {
 
 	return m_panier;
 }
 
-/*std::vector<Produit> Client::affichePanier() {
+//Surcharger l’opérateur << pour pouvoir afficher toutes les informations du client 
+
+
+/*ostream& operator << (ostream &output,Client c ) {
+
+		output << "ID du Client : " << c. getIdclient() << endl << " Prenom: "<< c.getPrenom() <<endl << " Nom : " <<c.getNom() <<endl << c.getPanier()<<endl;
+
+		return output;
+
+}*/
+
+	
+
+
+/*
+
+
+std::vector<Produit> Client::affichePanier() {
 
 	int n;
 	n = cl.getPanier().size();
@@ -56,8 +112,3 @@ std::vector<Produit> Client::getPanier() {
 
 }
 */
-
-//ajoute un produit au panier
-void Client::addProduit(Produit product){
-	m_panier.push_back (product);
-}
