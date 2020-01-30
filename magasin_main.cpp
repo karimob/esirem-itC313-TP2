@@ -14,6 +14,7 @@ using namespace std;
 int main()
 {
 	
+	/*
 Magasin n;
 Produit P("UNDERWORLD","FILM", 6 , 68.45 ) ;
 n.addProduit(P);
@@ -32,14 +33,14 @@ n.findProd("starwars");
 
 cout << "---------------------------------------------------"<< endl;
 n.updateQte("starwars",5);
-cout << " produit modifié"<<  endl ;
+cout << "Quantité du produit modifié"<<  endl ;
 n.findProd("starwars");
 //cout << A ;
 
 
 //cout << "prenom : "<< cl.getPrenom() << std::endl;
 
-
+*/
 	return 0;
 
 }
