@@ -20,7 +20,7 @@ public:
 
     void findProd(std::string titre);   	//afficher à l’écran un produit sélectionné par son nom
 
-    void updateQte( std::string titre);   	// mettre à jour la quantité d’un produit sélectionné par son nom
+    void updateQte( std::string titre, int qte);   	// mettre à jour la quantité d’un produit sélectionné par son nom
 
 
 

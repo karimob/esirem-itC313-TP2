@@ -64,14 +64,14 @@ void Magasin::findProd(string titre) {
 
  // mettre à jour la quantité d’un produit sélectionné par son nom
 
- 	void Magasin::updateQte(string titre){
+ 	void Magasin::updateQte(string titre, int qte){
 
  		for (int i=0; i< m_products.size(); i++) {
 
  			if(m_products.at(i).getTitle() == titre){
             
 
-                    m_products.at(i).setQte(78);
+                    m_products.at(i).setQte(qte);
 
 				  //cout<<m_products.at(i).setQte(qte) << " ";   
 
@@ -145,9 +145,9 @@ void Magasin::addProd(Produit p){
 
 void Magasin::modifPan(string titre,int qte){
 
-// int qte = 7;
 
-Client::void modifQte(qte);
+
+ m_panier.at(i).modifQte(qte);
 		
  	} 
 */

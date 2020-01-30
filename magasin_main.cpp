@@ -31,8 +31,10 @@ n.findProd("starwars");
 
 
 cout << "---------------------------------------------------"<< endl;
-n.updateQte("UNDERWORLD");
-cout << P ;
+n.updateQte("starwars",5);
+cout << " produit modifié"<<  endl ;
+n.findProd("starwars");
+//cout << A ;
 
 
 //cout << "prenom : "<< cl.getPrenom() << std::endl;
