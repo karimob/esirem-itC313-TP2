@@ -69,7 +69,7 @@ void Produit::setQte(int qte){
 
 
 //surcharge pour afficher un produit
-/*ostream& operator << (ostream &output,Produit product ) {
+ostream& operator << (ostream &output,Produit product ) {
 
 		output << "Nom du produit : " << product.m_titre <<endl << "  Description : "<< product.m_description <<std::endl << "  Quantite : " << product.m_qte <<endl <<"  Prix : " << product.m_prix <<"$"<<endl ;
 
@@ -77,4 +77,3 @@ void Produit::setQte(int qte){
 
 	}
 
-*/
