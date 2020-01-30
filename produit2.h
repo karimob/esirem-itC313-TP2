@@ -15,7 +15,7 @@ class Produit {
 
 public :
 
- 	friend std::ostream& operator << (std::ostream &output, Produit product);
+ 	//friend std::ostream& operator << (std::ostream &output, Produit product);
 
 	Produit(std::string titre, std::string description, int qte, float prix );
 

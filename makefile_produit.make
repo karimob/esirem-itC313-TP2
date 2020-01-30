@@ -4,7 +4,7 @@ CXXFLAGS   = -Wall -Wextra -std=c++14
 
 LDFLAGS    = -lm
 
-SRCS       = produit2.cpp  produit2_main.cpp 
+SRCS       = produit2.cpp  produit2_main.cpp
 
 OBJS       = $(SRCS:.cpp=.o)
 
