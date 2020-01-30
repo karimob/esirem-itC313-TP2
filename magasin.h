@@ -14,7 +14,7 @@ public:
 
     Magasin();
 
-    void addProduit(Produit p);  			//ajouter un nouveau produit au magasin
+    /*void addProduit(Produit p);  			//ajouter un nouveau produit au magasin
 
     void displayProd();  					//afficher à l’écran tous les produits référencés dans le magasin
 
@@ -36,7 +36,7 @@ public:
 
 	void modifPan(std::string titre,int qte);							// modifier la quantité d’un produit du panier d’achat d’un client. 
  
-
+*/
 
 
 private:
