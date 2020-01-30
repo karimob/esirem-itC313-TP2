@@ -17,19 +17,21 @@ public:
 
 	std::string getNom() const;
 	
-	std::vector<Produit> getPanier() ; 
+	std::vector<Produit*> getPanier () ; 
 
-	void addProduit(Produit product);  //ajouter un produit au panier d’achat
+	void addProduit(Produit* product);  //ajouter un produit au panier d’achat
 	 
-	std::vector<Produit> videPanier() ;  //vider le panier d’achat
+	void  videPanier() ;  //vider le panier d’achat
 
-	void modifQte(); // modifier la quantité d’un produit ajouté au panier d’achat 
+	void modifQte(std::string, int qte); // modifier la quantité d’un produit ajouté au panier d’achat 
 
 	void delProduct(std::string titre); // supprimer un produit du panier d’achat
 
-	//friend std::ostream& operator << (std::ostream &output, Client c);
+	std::vector<Produit> affichePanier() ; 
 
-										//std::vector<Produit> affichePanier() ; 
+	friend std::ostream& operator << (std::ostream &output, Client &c);
+
+										
 
 
 private:
@@ -37,7 +39,7 @@ private:
 	int m_idclient;
 	std::string m_prenom;
 	std::string m_nom;
-	std::vector<Produit> m_panier;
+	std::vector<Produit*> m_panier;
 
 	
 
