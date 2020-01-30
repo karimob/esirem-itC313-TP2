@@ -2,8 +2,8 @@
 #define _magasin_h
 #include <vector>
 #include <string>
-#include "client2.h"
-#include "produit2.h"
+//#include "client2.h"
+//#include "produit2.h"
 // #include "order.h"
 
 
@@ -41,11 +41,11 @@ public:
 
 private:
 
-std::vector<Produit> m_products;
+std::vector<Produit*> m_products;
 
 std::vector<Client*> m_clients; 
 
-// std::vector<Order*> m_orders;
+std::vector<Order*> m_orders;
 
 };
 

@@ -2,9 +2,9 @@
 
 #include "magasin.h"
 
-#include "client2.h"
+//#include "client2.h"
 
-#include "produit2.h"
+//#include "produit2.h"
 
 #include <string>
 
@@ -14,9 +14,9 @@ using namespace std;
 Magasin::Magasin(){
 
 
-std::vector<Produit> m_products;
+std::vector<Produit*> m_products;
 
-std::vector<Client> m_clients; 
+std::vector<Client*> m_clients; 
 
 // std::vector<Order*> m_orders;
 };
