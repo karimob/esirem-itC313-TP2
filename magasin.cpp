@@ -4,24 +4,25 @@
 
 //#include "client2.h"
 
-//#include "produit2.h"
+#include "produit2.h"
 
 #include <string>
 
 
-using namespace std;
+
 
 Magasin::Magasin(){
 
+std::vector<Produit*> prod;
 
-std::vector<Produit*> m_products;
+ 
 
-std::vector<Client*> m_clients; 
+//std::vector<Client*> m_clients; 
 
 // std::vector<Order*> m_orders;
-};
+}
 
-/*
+
 
 // QUESTION 3.a
 
@@ -29,8 +30,9 @@ std::vector<Client*> m_clients;
 //ajouter un nouveau produit au magasin
 
 void Magasin::addProduit(Produit p) {
-	 Magasin::m_products.push_back(p);
+	Magasin:: m_products.push_back(&p);
 }
+
 
 // QUESTION 3.b
 
@@ -38,9 +40,14 @@ void Magasin::addProduit(Produit p) {
 //afficher à l’écran tous les produits référencés dans le magasin
 
 void Magasin::displayProd() {
-	 for (auto i = m_products.cbegin(); i != m_products.cend(); ++i) 
-	 	
-        cout << *i << " "; 
+	
+    int a = m_products.size();
+
+    for (int i=0; i<a; i++){
+
+        std::cout<< *m_products.at(i)<<std::endl;
+
+    } 
 }
 
 
@@ -48,15 +55,38 @@ void Magasin::displayProd() {
 
 //afficher à l’écran un produit sélectionné par son nom
 
-void Magasin::findProd(string titre) {
+void Magasin::findProd(std::string titre) {
 
-	 for (int i=0; i< m_products.size(); i++) {
+	 if (m_products.empty())
 
-         if(m_products.at(i).getTitle() == titre){
+            std::cout<<"PAS DE PRODUITS AVEC CE NOM"<<std::endl;
 
-             cout<< m_products.at(i) << " ";
-         }
-     }
+    else{
+
+        int a = m_products.size();
+
+        Produit* p = nullptr;
+
+        for (int i=0; i<a; i++){
+
+            if (m_products.at(i)->getTitle() == titre )
+
+                p = m_products.at(i);
+
+        }
+
+
+        if (p != nullptr)
+
+            std::cout<< *p <<std::endl;
+
+        else 
+
+            std::cout << "PAS DE PRODUITS : " << titre << std::endl;
+
+        }
+        
+
 }
 
 // QUESTION 3.d
@@ -64,14 +94,14 @@ void Magasin::findProd(string titre) {
 
  // mettre à jour la quantité d’un produit sélectionné par son nom
 
- 	void Magasin::updateQte(string titre, int qte){
+ 	void Magasin::updateQte(std::string titre, int qte){
 
  		for (int i=0; i< m_products.size(); i++) {
 
- 			if(m_products.at(i).getTitle() == titre){
+ 			if(m_products.at(i)-> getTitle() == titre){
             
 
-                    m_products.at(i).setQte(qte);
+                    m_products.at(i)-> setQte(qte);
 
 				  //cout<<m_products.at(i).setQte(qte) << " ";   
 
@@ -79,6 +109,8 @@ void Magasin::findProd(string titre) {
          }
 		
  	} 
+
+
 /*
 
 //QUESTION 5.a à 5.f

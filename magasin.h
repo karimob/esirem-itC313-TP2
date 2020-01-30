@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 //#include "client2.h"
-//#include "produit2.h"
+#include "produit2.h"
 // #include "order.h"
 
 
@@ -14,7 +14,7 @@ public:
 
     Magasin();
 
-    /*void addProduit(Produit p);  			//ajouter un nouveau produit au magasin
+    void addProduit(Produit p);  			//ajouter un nouveau produit au magasin
 
     void displayProd();  					//afficher à l’écran tous les produits référencés dans le magasin
 
@@ -23,7 +23,7 @@ public:
     void updateQte( std::string titre, int qte);   	// mettre à jour la quantité d’un produit sélectionné par son nom
 
 
-
+/*
     void addClient(Client* c);						//ajouter un nouveau client au magasin
 
 	void displayClient();					//afficher à l’écran tous les clients du magasin
@@ -35,17 +35,18 @@ public:
     void delProduct(std::string titre);								//supprimer un produit au panier d’achat d’un client
 
 	void modifPan(std::string titre,int qte);							// modifier la quantité d’un produit du panier d’achat d’un client. 
- 
-*/
+ */
+
 
 
 private:
 
 std::vector<Produit*> m_products;
 
-std::vector<Client*> m_clients; 
+/*std::vector<Client*> m_clients; 
 
 std::vector<Order*> m_orders;
+*/
 
 };
 
