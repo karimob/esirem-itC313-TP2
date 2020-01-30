@@ -17,9 +17,21 @@ int main()
 Magasin n;
 Produit P("UNDERWORLD","FILM", 6 , 68.45 ) ;
 n.addProduit(P);
-cout << P ;
+//cout << P ;
 
-n.updateQte("UNDERWORLD",7);
+Produit A("starwars","movie",8,65);
+n.addProduit(A);
+
+cout << "---------------------------------------------------" <<   endl;
+n.displayProd();
+
+
+cout << "---------------------------------------------------"  <<endl;
+n.findProd("starwars");
+
+
+cout << "---------------------------------------------------"<< endl;
+n.updateQte("UNDERWORLD");
 cout << P ;
 
 
