@@ -29,9 +29,16 @@ std::vector<Produit*> prod;
 
 //ajouter un nouveau produit au magasin
 
-void Magasin::addProduit(Produit p) {
-	Magasin:: m_products.push_back(&p);
+void Magasin::addProduct(std::string titre, std::string description, int qte, float prix){
+
+    Produit* p = new Produit(titre, description, qte, prix);
+
+    m_products.push_back(p);
+
+    
+
 }
+
 
 
 // QUESTION 3.b
@@ -63,22 +70,33 @@ void Magasin::findProd(std::string titre) {
 
     else{
 
+
         int a = m_products.size();
 
         Produit* p = nullptr;
 
+        
+
         for (int i=0; i<a; i++){
 
-            if (m_products.at(i)->getTitle() == titre )
+
+
+            if (m_products.at(i)->getTitle() == titre ){
+
+                
 
                 p = m_products.at(i);
+            }
 
         }
 
 
-        if (p != nullptr)
+        if (p != nullptr){ 
+
+        
 
             std::cout<< *p <<std::endl;
+         }
 
         else 
 
@@ -109,6 +127,8 @@ void Magasin::findProd(std::string titre) {
          }
 		
  	} 
+
+
 
 
 /*

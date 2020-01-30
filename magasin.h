@@ -14,7 +14,10 @@ public:
 
     Magasin();
 
-    void addProduit(Produit p);  			//ajouter un nouveau produit au magasin
+    void addProduct(std::string titre, std::string description, int qte, float prix) ;  //ajouter un nouveau produit au magasin
+
+
+    //void addProduit(Produit p);  			
 
     void displayProd();  					//afficher à l’écran tous les produits référencés dans le magasin
 
