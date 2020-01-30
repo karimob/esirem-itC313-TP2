@@ -1,7 +1,7 @@
 #include <iostream>
 #include "magasin.h"
-#include "client2.h"
-#include "produit2.h"
+//#include "client2.h"
+//#include "produit2.h"
 
 #include <string>
 
