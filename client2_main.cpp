@@ -10,18 +10,33 @@ int main(){
 
 	
 
-	//prenom = "ANTHONY";   nom = "BETCH";
+
+	Client kb(46,"RICHARD","GATES");
+
 
 	Client cl(93,"ANTOINE","BETCH");
 
 	Produit carrot("Carrotte","Legume",5,65);
+	Produit carrot1("Car","Leg",5,6);
+	Produit* p = &carrot;
+	Produit* p1 = &carrot1;
 
-	Produit game("got","excellent jeu",9,76.8);
 
-	cl.addProduit(game);
+	//cl.addProduit(carrot);
 
-	cl.addProduit(carrot);
+	cout << "---------------------------------------------------"<< endl;
 
+	cl.addProduit(p);
+	cl.addProduit(p1);
+	cl.modifQte("Carrotte",8);
+
+	cl.affichePanier();
+	cout << "---------------------------------------------------"<< endl;
+	cl.delProduct(carrot1.getTitle());
+	cl.affichePanier();
+		cout << "---------------------------------------------------"<< endl;
+	cl.videPanier();
+	cl.affichePanier();
 
 	/*cout << "prenom : "<< cl.getPrenom() <<endl;
 

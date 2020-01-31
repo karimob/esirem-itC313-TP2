@@ -1,9 +1,11 @@
 #include "client2.h"
-//#include "produit2.h"
 #include <vector>
 #include <string>
 
 using namespace std;
+
+
+
 		//QUESTIONS 4.a à 4.f
 
 
@@ -14,7 +16,7 @@ Client::Client( int idclient, string prenom, string nom){
 	m_idclient = idclient;
 	m_prenom = prenom;
 	m_nom = nom;
-	vector<Produit> m_panier;
+	//vector<Produit> m_panier;
 	//m_panier = panier;
 }
 
@@ -68,8 +70,8 @@ if (m_panier.empty())
 		cout<<" RIEN A FAIRE "<<endl;
 
 	else{
-
- 		for (int i=0; i< m_panier.size(); i++) {
+		int a = m_panier.size();
+ 		for (int i=0; i< a; i++) {
 
  			if(m_panier.at(i)->getTitle() == titre){
             
@@ -90,12 +92,13 @@ void Client::delProduct(string titre){
 		cout<<" RIEN A FAIRE "<<endl;
 
 	else{
-	
-		for (int i=0; i< m_panier.size(); i++) {
+		int a = m_panier.size();
+		for (int i=0; i< a; i++) {
 
  			if(m_panier.at(i)->getTitle() == titre){
+ 				m_panier.erase(m_panier.begin()+i);
             	
-            	m_panier.at(i)= nullptr;
+            	//m_panier.at(i)= nullptr;
             	 ; 
 
          	}
@@ -105,33 +108,37 @@ void Client::delProduct(string titre){
 
 
 //affiche le panier
+ 
 vector<Produit*> Client::getPanier() {
 
 	return m_panier;
 }
 
 
-vector<Produit> Client::affichePanier() {
+//vector<Produit> Client::affichePanier() {
+
+void Client::affichePanier() {
 
 	cout << "  Voici votre panier de produits: " <<endl;
-
-	for (int c=0;c<m_panier.size();c++){
+	int a = m_panier.size();
+	for (int c=0;c < a;c++){
 	
-		cout<<m_panier.at(c)  <<endl;
+		cout<<*m_panier.at(c)  <<endl;
 	
 	}
+
 
 }
 
 
-//Surcharger l’opérateur << pour pouvoir afficher toutes les informations du client 
+//Surcharge de l’opérateur << pour pouvoir afficher toutes les informations du client 
 
 
 ostream& operator << (ostream &output,Client &c ) {
 
 	output << "ID du Client : " << c.m_idclient << endl << " Prenom: "<< c.m_prenom <<endl << " Nom : " <<c.m_nom <<endl << "  Panier : ";
-
-		for (int i=0;i<c.m_panier.size();i++){
+		int a = c.m_panier.size();
+		for (int i=0;i<a;i++){
 	
 			if(i >0)
 
@@ -146,9 +153,3 @@ ostream& operator << (ostream &output,Client &c ) {
 
 	
 
-
-/*
-
-
-
-*/

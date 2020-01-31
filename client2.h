@@ -23,11 +23,12 @@ public:
 	 
 	void  videPanier() ;  //vider le panier d’achat
 
-	void modifQte(std::string, int qte); // modifier la quantité d’un produit ajouté au panier d’achat 
+	void modifQte(std::string titre, int qte); // modifier la quantité d’un produit ajouté au panier d’achat 
 
 	void delProduct(std::string titre); // supprimer un produit du panier d’achat
 
-	std::vector<Produit> affichePanier() ; 
+	//std::vector<Produit> affichePanier() ; 
+	void affichePanier() ;
 
 	friend std::ostream& operator << (std::ostream &output, Client &c);
 
