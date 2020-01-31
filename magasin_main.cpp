@@ -55,6 +55,70 @@ cout << "---------------------------------------------------"<< endl;
 
 
 
+Magasin my_easystore;
+
+	// Add new clients
+
+	my_easystore.addClient("Dominique", "Ginhac");
+
+	my_easystore.addClient("Bill", "Gates");
+
+	my_easystore.addClient("Richard", "Stallman");
+
+	my_easystore.addClient("Alan", "Turing");
+
+	my_easystore.addClient("Steve", "Jobs");
+
+
+
+	// Display all the clients
+
+	std::cout << std::endl << "__________Tous les clients__________"<< std::endl;
+
+	my_easystore.displayClient();
+
+
+
+	// Display clients "Richard Stalman" and 4
+
+	std::cout << std::endl << "__________ Affichage d'un client à partir de son nom __________"<< std::endl;
+
+	my_easystore.findClient("Richard", "Stallman");
+
+	std::cout << std::endl << "__________ Affichage d'un client à partir de son id __________"<< std::endl;
+
+	my_easystore.findClient(2);
+
+
+
+	// Add products to the store with Title, Description, Price and Quantity
+
+	my_easystore.addProduct("Play Station","Console de jeu Sony", 249.99,10);
+
+	my_easystore.addProduct("Switch", "Console de jeu Nintendo", 299.99,30);
+
+	my_easystore.addProduct("Xbox One", "Console de jeu Microsoft", 179.99,15);
+
+
+
+	// Add a product with its title and add to a client identified by his name	
+
+	std::cout << std::endl << "__________ Commande éfectuée par un client __________"<< std::endl;
+
+	my_easystore.addProduit("Casque RV PS", "Richard", "Stallman");
+
+
+
+	// Add a product with its title and add to a client identified by his uid
+
+	my_easystore.addProduit("Casque Audio", 4);
+
+
+
+
+
+
+
 	return 0;
 
 }

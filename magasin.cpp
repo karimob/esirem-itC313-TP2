@@ -5,24 +5,30 @@
 #include "client2.h"
 
 #include "produit2.h"
+#include "order.h" 
 
 #include <string>
 
 
 
+
+//CONSTRUCTEUR :
 //créer un objet vide de type magasin
 
 Magasin::Magasin(){
 
 
-// std::vector<Produit*> prod;
+//std::vector<Produit*> m_products;
 //std::vector<Client*> m_clients; 
 
 // std::vector<Order*> m_orders;
+
 }
 
 
-Magasin::~Magasin(){
+//DESTRUCTEUR
+
+Magasin::~Magasin() {
 
     int a = m_clients.size();
 
@@ -54,6 +60,7 @@ Magasin::~Magasin(){
         m_orders.at(i) = nullptr;
 
     }
+
 
 
 }
@@ -192,13 +199,13 @@ void Magasin::addClient(std::string nom, std::string prenom){
 
 //afficher à l’écran tous les clients du magasin					
 
-std::vector<Client*> Magasin::displayClient() {
+void Magasin::displayClient() {
 
 	 int a = m_clients.size();
 
     for (int i=0; i<a; i++)
 
-        std::cout<< m_clients.at(i)<<std::endl;
+        std::cout<< *m_clients.at(i)<<std::endl;
 
 }
 
@@ -280,7 +287,7 @@ Produit* Magasin::return_prod(std::string& titre){
 
     if (m_products.empty()){
 
-        std::cout<<" No product to return. "<<std::endl;
+        std::cout<<" PAS DE PRODUIT A RETOURNE "<<std::endl;
 
         return p;
 
@@ -311,13 +318,13 @@ Produit* Magasin::return_prod(std::string& titre){
 
  // Ajoute un produit au panier d'un client sélectionné à partir de son nom
 
-void Magasin::addProd(std::string titre, std::string prenom, std::string nom){
+void Magasin::addProduit(std::string titre, std::string prenom, std::string nom){
 
     if (m_clients.empty()){
 
         addClient(nom,prenom); // ajout du client
 
-        m_clients.front()->addProd(return_prod(titre)); // ajout du produit sélectionner par son titre au panier du client  
+        m_clients.front()->addProduit(return_prod(titre)); // ajout du produit sélectionner par son titre au panier du client  
 
     }
 
@@ -329,15 +336,15 @@ void Magasin::addProd(std::string titre, std::string prenom, std::string nom){
 
             if (return_prod(titre) != nullptr){
 
-                m_clients.at(i)->add_product(return_prod(titre));
+                m_clients.at(i)->addProduit(return_prod(titre));
 
-                std::cout<<" Adding product " << titre << " to cart of " << nom << std::endl;
+                std::cout<<" AJOUTANT LE PRODUIT " << titre << " AU PANIER DE " << nom << std::endl;
 
             }
 
             else 
 
-                std::cout << "No product "<< titre << std::endl;
+                std::cout << "PAS DE PRODUIT "<< titre << std::endl;
 
         }
 
@@ -347,11 +354,11 @@ void Magasin::addProd(std::string titre, std::string prenom, std::string nom){
 
 // Ajoute un produit au panier d'un client sélectionné à partir de son identifiant
 
-void Magasin::addProd(std::string titre, int idclient){
+void Magasin::addProduit(std::string titre, int idclient){
 
     if (m_clients.empty()){
 
-        std::cout<<" No client id :#"<< idclient <<std::endl;
+        std::cout<<" Pas de client id :#"<< idclient <<std::endl;
 
     }
 
@@ -363,15 +370,15 @@ void Magasin::addProd(std::string titre, int idclient){
 
             if (return_prod(titre) != nullptr){
 
-                m_clients.at(i)->addProd(return_prod(titre));
+                m_clients.at(i)->addProduit(return_prod(titre));
 
-                std::cout<<" Adding product "<< titre <<" to cart of client"<< idclient<< std::endl;
+                std::cout<<" Ajoutant le produitt "<< titre <<" au panier de "<< idclient<< std::endl;
 
             }
 
             else 
 
-                std::cout << "No product "<< titre << std::endl;
+                std::cout << " pas de PRODUIT "<< titre << std::endl;
 
         }
 
@@ -394,7 +401,7 @@ void Magasin::delProduct(std::string& titre, std::string& prenom, std::string& n
 	
 	if (m_clients.empty())
 
-        std::cout<<" No product to delete."<<std::endl;
+        std::cout<<" PAS DE PRODUIT A SUPPRIMER"<<std::endl;
 
     else {
 
@@ -404,9 +411,9 @@ void Magasin::delProduct(std::string& titre, std::string& prenom, std::string& n
 
             if (m_clients.at(i)->getNom() == nom && m_clients.at(i)->getPrenom() == prenom)
 
-                m_clients.at(i)->del_product(titre);
+                m_clients.at(i)->delProduct(titre);
 
-        std::cout << "Deletion of the product "<< titre << "from cart. " << std::endl;
+        std::cout << " SuPPRESSION DU PRODUIT "<< titre << " DU PANIER " << std::endl;
 
     }       
 
@@ -419,7 +426,7 @@ void Magasin::modifPan(std::string& titre,std::string& prenom, std::string& nom,
 
 if (m_clients.empty())
 
-        std::cout<<" Nothing to do. "<<std::endl;
+        std::cout<<" RIEN A FAIRE "<<std::endl;
 
     else {
 
@@ -429,13 +436,12 @@ if (m_clients.empty())
 
             if (m_clients.at(i)->getNom() == nom && m_clients.at(i)->getPrenom() == prenom)
 
-                m_clients.at(i)->modifQte(string titre,int qte);    
+                m_clients.at(i)->modifQte( titre, qte);    
 
 
     }
 
 }
-
 
 
 
@@ -445,7 +451,7 @@ void Magasin::valide_commande(int idclient){
 
     static int count2 = 0;
 
-    int id = count2++;
+    int uid = count2++;
 
     int a = 0;
 
@@ -455,13 +461,13 @@ void Magasin::valide_commande(int idclient){
 
     if (a == 1){
 
-        Order* order = new Commande(id); // clt);
+        Order* order = new Order(uid); // clt);
 
         int b = m_clients.size();
 
         for (int i=0; i < b ; i++){
 
-            if (m_clients.at(i)->getUid() == idclient){
+            if (m_clients.at(i)->getIdclient() == idclient){
 
                 order->setProduct(m_clients.at(i)->getPanier()); //copie du contenu du panier dans les produits de la commande 
 
@@ -469,7 +475,7 @@ void Magasin::valide_commande(int idclient){
 
                 order->setStatus(false);
 
-                m_clients.at(i)->clear_panier(); // Vidange du panier du client
+                m_clients.at(i)->videPanier(); // Vidange du panier du client
 
             }
 
@@ -477,7 +483,7 @@ void Magasin::valide_commande(int idclient){
 
         m_orders.push_back(order);
 
-        std::cout << "Commande éffectuée. "<< std::endl;
+        std::cout << "Commande validée avec succès "<< std::endl;
 
     }
 
@@ -535,7 +541,7 @@ void Magasin::display_orders_clt(int idclient){
 
         Client* clt = m_orders.at(i)->getClient();
 
-        if ( clt->getUid() == idclient)
+        if ( clt->getIdclient() == idclient)
 
             std::cout <<  *clt << std::endl;
 
@@ -563,7 +569,7 @@ std::vector<Client*> Magasin::getm_clients() const
 
 }
 
-std::vector<Commande*> Magasin::getm_orders() const 
+std::vector<Order*> Magasin::getm_orders() const 
 
 {
 
@@ -580,9 +586,9 @@ std::vector<Commande*> Magasin::getm_orders() const
 
 
 
-/*
 
 
-            m_panier.at(i).modifQte(qte);
+
+            //m_panier.at(i).modifQte(qte);
 		
- 	} 
+ 	
