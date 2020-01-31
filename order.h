@@ -11,16 +11,35 @@ class Order{
 public:
 
 
+	Order(int uid);   // Client* clt);
+
+	int getUid() const;
+
+	Client* getClient() const;
+
+	void setProduct(std::vector<Product*>);
+
+	void setClient(Client* c);
+
+	void setStatus(bool s);
+
+	friend std::ostream& operator << (std::ostream &output, Order& order); // surcharge de l'opérateur << pour afficher toutes les informations d'une commande
+
 
 
 
 
 private:
 
-std::string client;
-std::vector<Produit> m_prodcom;
-std::string m_statut;
+	 int m_uid;
 
+	Client* m_client;
+
+	std::vector<Produit*> m_products_order;
+
+	bool m_status; // vrai : commande livrée et faux : commande non livrée
+
+};
 
 
 };
