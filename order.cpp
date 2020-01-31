@@ -6,12 +6,15 @@
 #include "order.h" 
 
 
-using namespace std;
-
-Order::Order(int uid): m_uid(uid) {}
 
 
-int Commande::getUid() const {
+Order::Order(int uid) {
+
+m_uid=uid;
+}
+
+
+int Order::getUid() const {
 
 	return m_uid;
 
@@ -59,7 +62,7 @@ std::ostream &operator << (std::ostream& output, Order& order){
 
 	output<< "ID Order : " << order.m_uid << " -  Nom client : " << order.m_client->getNom()
 
-			 << " -  ID client : " <<order.m_client->getUid() << " -  Status : " << order.m_status 
+			 << " -  ID client : " <<order.m_client->getIdclient() << " -  Status : " << order.m_status 
 
 			 << " -  Products : ";
 

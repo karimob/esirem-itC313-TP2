@@ -17,7 +17,7 @@ public:
 
 	Client* getClient() const;
 
-	void setProduct(std::vector<Product*>);
+	void setProduct(std::vector<Produit*>);
 
 	void setClient(Client* c);
 
@@ -31,7 +31,7 @@ public:
 
 private:
 
-	 int m_uid;
+	int m_uid;
 
 	Client* m_client;
 
@@ -42,7 +42,7 @@ private:
 };
 
 
-};
+
 
 
 
