@@ -24,7 +24,7 @@ Produit::Produit(string titre,string description, int qte, float prix ){
 
 
 
-string Produit::getTitle(){
+string Produit::getTitle() const {
 
 	return m_titre ;
 
@@ -32,7 +32,7 @@ string Produit::getTitle(){
 
 
 
-string Produit::getDescription(){
+string Produit::getDescription() const {
 
 	return m_description ;
 
@@ -40,7 +40,7 @@ string Produit::getDescription(){
 
 
 
-int Produit::getQte(){
+int Produit::getQte() const{
 
 	return m_qte ;
 
@@ -48,7 +48,7 @@ int Produit::getQte(){
 
 
 
-float Produit::getPrix(){
+float Produit::getPrix() const{
 
 	return m_prix ;
 

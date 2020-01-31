@@ -19,13 +19,13 @@ public :
 
 	Produit(std::string titre, std::string description, int qte, float prix );
 
-	std::string getTitle();
+	std::string getTitle() const;
 
-	std::string getDescription();
+	std::string getDescription() const;
 
-	int getQte();
+	int getQte() const;
 
-	float getPrix();
+	float getPrix() const;
 
 	void setQte(int qte);
 
